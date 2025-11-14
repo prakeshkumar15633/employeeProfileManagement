@@ -25,7 +25,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    bat "docker run -d --name employeeprofilemanagement -p 8200:8200 ${DOCKER_IMAGE}:${BUILD_NUMBER}"
+                    bat "docker run -d --add-host=host.docker.internal:host-gateway --name employeeprofilemanagement -p 8200:8200 ${DOCKER_IMAGE}:${BUILD_NUMBER}"
                 }
             }
         }
