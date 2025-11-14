@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: employee-deployment
-  namespace: employee
+  name: employeeprofilemanagement-deployment
+  namespace: employeeprofilemanagement-ns
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: employee
+      app: employeeprofilemanagement
   template:
     metadata:
       labels:
-        app: employee
+        app: employeeprofilemanagement
     spec:
       containers:
-        - name: employee-container
-          image: employeeprofilemanagement_image:32
+        - name: employeeprofilemanagement-container
+          image: employeeprofilemanagement_image:34
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 8200
